@@ -82,16 +82,16 @@ OUT = $(SRCS:%.c=%.o)
 all: $(NAME)
 
 $(NAME): $(OUT) libft.h
-		ar rc $(NAME) $(OUT)
+	@ar rc $(NAME) $(OUT)
 
-%.c:%.o
-	gcc $(FLAGS) $< -o $@
+%.o:%.c
+	@gcc $(FLAGS) $< -o $@
 
 clean:
-		rm -f $(OUT)
+	@rm -f $(OUT)
 
 fclean: clean
-		rm -f $(NAME)
+	@rm -f $(NAME)
 
 re: fclean all
 
